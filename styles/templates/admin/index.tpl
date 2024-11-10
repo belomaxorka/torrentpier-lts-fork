@@ -148,7 +148,7 @@ ajax.callback.manage_admin = function(data) {
 	</tr>
 	<tr>
 		<td class="row1" nowrap="nowrap" width="25%">{L_TP_FORK_VERSION}:</td>
-		<td class="row2"><b>{$bb_cfg['tp_mod_version']}</b></td>
+		<td class="row2"><b>{$bb_cfg['tp_mod_version']} &middot; <a target="_blank" href="https://github.com/belomaxorka/torrentpier-lts-fork">GitHub</a></b></td>
 	</tr>
 </table>
 <br />
