@@ -51,7 +51,7 @@ $lastvisit   = (!IS_GUEST) ? $userdata['user_lastvisit'] : '';
 $search_id   = (isset($_GET['search_id']) && verify_id($_GET['search_id'], SEARCH_ID_LENGTH)) ? $_GET['search_id'] : '';
 $session_id  = $userdata['session_id'];
 // Поиск по статусу раздачи
-$status      = (isset($_REQUEST['status'])) ? $_REQUEST['status'] : false;
+$status      = (isset($_POST['status']) && is_array($_POST['status'])) ? $_POST['status'] : array();
 
 $cat_forum = $tor_to_show = $search_in_forums_ary = array();
 $title_match_sql = $title_match_q = $search_in_forums_csv = '';
@@ -678,7 +678,7 @@ if ($allowed_forums)
 		}
 
 		// Поиск по статусу раздачи
-		if (is_array($status) && count($status) > 0)
+		if (!empty($status))
 		{
 			$SQL['WHERE'][] = "tor.tor_status IN(" . implode(', ', $status) . ")";
 		}
