@@ -108,8 +108,28 @@ class upload_common
 				// width & height
 				if (($this->cfg['max_width'] && $width > $this->cfg['max_width']) || ($this->cfg['max_height'] && $height > $this->cfg['max_height']))
 				{
-					$this->errors[] = sprintf($lang['UPLOAD_ERROR_DIMENSIONS'], $this->cfg['max_width'], $this->cfg['max_height']);
-					return false;
+					// уменьшаем изображение если оно больше положенного
+					require(CLASS_DIR . 'SimpleImage.php');
+					for ($i = 0, $max_try = 3; $i <= $max_try; $i++)
+					{
+						try
+						{
+							$image = new \abeautifulsite\SimpleImage($this->file['tmp_name'], $width, $height);
+							$image->quality = 100; // Качество изображения (%)
+							$image->auto_orient();
+							$image->resize($this->cfg['max_width'], $this->cfg['max_height']);
+							$image->save($this->file['tmp_name']);
+							break;
+						}
+						catch (\Exception $e)
+						{
+							if ($i == $max_try)
+							{
+								$this->errors[] = sprintf($lang['UPLOAD_ERROR_DIMENSIONS'], $this->cfg['max_width'], $this->cfg['max_height']);
+								return false;
+							}
+						}
+					}
 				}
 			}
 			else
