@@ -17,3 +17,4 @@
 - Поиск по статусу раздачи v2.1.0 ([ссылка](https://torrentpier.com/resources/poisk-po-statusu-razdachi.161/))
 - Вывод порядкового номера поста в топике ([ссылка](https://torrentpier.com/threads/vyvod-porjadkovogo-nomera-posta-v-topike.42192/))
 - Вывод описания форума на странице форума v1.1.0 ([ссылка](https://torrentpier.com/threads/vyvod-opisanija-foruma-na-stranice-foruma.42142/))
+- BBCode: Поддержка относительных ссылок v1.0.0 ([ссылка](https://torrentpier.com/resources/bbcode-podderzhka-otnositelnyx-ssylok.306/))
