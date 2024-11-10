@@ -126,3 +126,5 @@ DELETE FROM `bb_extensions` WHERE `extension` = 'tiff';
 // -------------------------- [Fork] --------------------------
 // v1.0.0
 UPDATE `bb_config` SET `config_value` = 'https://localhost/bt/announce.php' WHERE `config_name` = 'bt_announce_url';
+ALTER TABLE `bb_bt_torrents` ADD COLUMN `last_seeder_id` mediumint(8) NOT NULL DEFAULT '0';
+ALTER TABLE `buf_last_seeder` ADD COLUMN `user_id` mediumint(8) NOT NULL DEFAULT '0';
