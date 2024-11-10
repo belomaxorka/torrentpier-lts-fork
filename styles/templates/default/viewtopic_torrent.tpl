@@ -65,7 +65,7 @@ $(document).ready(function(){
 		<tr>
 			<td colspan="2" class="<!-- IF SHOW_DL_LIST -->row2<!-- ELSE -->row1<!-- ENDIF --> pad_2">
 				<!-- IF not SEED_COUNT -->
-				<p class="mrg_10">{SEEDER_LAST_SEEN}</p>
+				<p class="mrg_10">{SEEDER_LAST_SEEN} {SEEDER_USERNAME}</p>
 				<!-- ENDIF -->
 
 				<!-- IF PEER_EXIST -->
@@ -97,7 +97,7 @@ $(document).ready(function(){
 		<!-- ELSE -->
 		<tr>
 			<td colspan="2" class="row2 pad_4">
-				<p class="mrg_10">{SEEDER_LAST_SEEN}</p>
+				<p class="mrg_10">{SEEDER_LAST_SEEN} {SEEDER_USERNAME}</p>
 			</td>
 		</tr>
 		<!-- ENDIF -->
@@ -115,7 +115,7 @@ $(document).ready(function(){
 
 		<!-- IF SEEDER_LAST_SEEN -->
 		<div id="last_seed_info" class="row5 w60 mrg_4 bCenter">
-			<p class="mrg_10">{SEEDER_LAST_SEEN}</p>
+			<p class="mrg_10">{SEEDER_LAST_SEEN} {SEEDER_USERNAME}</p>
 		</div>
 		<!-- ENDIF -->
 

@@ -565,9 +565,11 @@ if ($tor_reged && $tor_info)
 		if (($s_mode == 'count' && !$seed_count) || (!$seeders && !defined('SEEDER_EXIST')))
 		{
 			$last_seen_time = ($tor_info['seeder_last_seen']) ? delta_time($tor_info['seeder_last_seen']) : $lang['NEVER'];
+			$last_seeder_username = (!empty($tor_info['last_seeder_id']) && $last_seeder = get_userdata($tor_info['last_seeder_id'])) ? ' -> <b>' . profile_url(array('username' => $last_seeder['username'], 'user_id' => $last_seeder['user_id'], 'user_rank' => $last_seeder['user_rank'])) . '</b>' : (($tor_info['last_seeder_id'] == GUEST_UID) ? ' -> ' . $lang['GUEST'] : '');
 
 			$template->assign_vars(array(
 				'SEEDER_LAST_SEEN' => sprintf($lang['SEEDER_LAST_SEEN'], $last_seen_time),
+				'SEEDER_USERNAME'  => $last_seeder_username,
 			));
 		}
 	}
