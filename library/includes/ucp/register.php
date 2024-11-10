@@ -431,7 +431,7 @@ foreach ($profile_fields as $field => $can_edit)
 					require_once(CLASS_DIR . 'monsterid/monsterid.php');
 					$tempAvatar = tmpfile();
 					$monsterAvatar = build_monster($pr_data['user_email'], $bb_cfg['avatars']['max_height'], $tempAvatar);
-					$tempAvatarPath = stream_get_meta_data($tempAvatar)['uri'];
+					$tempAvatarPath = @stream_get_meta_data($tempAvatar)['uri'];
 
 					// Manual filling $_FILES['avatar']
 					$_FILES['avatar'] = array();
