@@ -244,6 +244,13 @@ a.small, a.gensmall { color: #006699; text-decoration: none; }
 .post-u     { text-decoration: underline; }
 .post-i     { font-style: italic; }
 .post-s     { text-decoration: line-through; }
+/* Rutracker bbcodes */
+.post-box-default { display: inline-block; vertical-align: top; }
+.post-box         { display: inline-block; border: 1px solid #a7b4ba; border-radius: 3px; line-height: 150%; margin: 1px 5px; padding: 0 8px 1px; }
+.post-indent      { margin-left: 2em; }
+.post_body pre    { border: none; background: transparent; padding: 0; margin: 0; }
+.post-pre         { white-space: pre-wrap; font-family: "Lucida Console", Consolas, monospace; }
+.post-nfo         { font-size: 13px; line-height: 1em; white-space: pre; font-family: Consolas, monospace; overflow-y: hidden; }
 /* ---------------------------------- *
      Code blocks
  * ---------------------------------- */
