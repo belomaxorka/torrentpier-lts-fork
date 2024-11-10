@@ -12,7 +12,11 @@ if (!$mode = (string)$this->request['mode']) {
 	$this->ajax_die('invalid mode (empty)');
 }
 
-$show_completed_count = ($bb_cfg['show_completed_count'] || $bb_cfg['ocelot']['enabled']);
+if (isset($bb_cfg['show_completed_count'])) {
+	$show_completed_count = ($bb_cfg['show_completed_count'] || $bb_cfg['ocelot']['enabled']);
+} else {
+	$show_completed_count = true;
+}
 
 switch ($mode) {
 	case 'get_releases_profile':
