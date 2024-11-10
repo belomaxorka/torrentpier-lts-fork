@@ -15,3 +15,4 @@
 - Автоматический ресайзер аватаров v1.0.1 ([ссылка](https://torrentpier.com/resources/avtomaticheskij-resajzer-avatarov.294/))
 - Сортировка по ролям в списке пользователей v2.0.0 ([ссылка](https://torrentpier.com/resources/sortirovka-po-roljam-v-spiske-polzovatelej.281/))
 - Поиск по статусу раздачи v2.1.0 ([ссылка](https://torrentpier.com/resources/poisk-po-statusu-razdachi.161/))
+- Вывод порядкового номера поста в топике ([ссылка](https://torrentpier.com/threads/vyvod-porjadkovogo-nomera-posta-v-topike.42192/))
