@@ -921,8 +921,8 @@ if ($bb_cfg['search_by_tor_status'])
 		$statuses .= '<tr>';
 		foreach ($statuses_part as $status_id => $status_styles)
 		{
-			$checked_status = ((is_array($status) && count($status) > 0) && in_array($status_id, $status)) ? 'checked' : '';
-			$statuses .= '<td><p class="chbox"><input type="checkbox" name="status[]" value="' . $status_id . '"' . $checked_status . '>' . $status_styles . '&nbsp;' . $lang['TOR_STATUS_NAME'][$status_id] . '</p></td>';
+			$checked_status = in_array($status_id, $status) ? 'checked' : '';
+			$statuses .= '<td><p class="chbox"><label><input type="checkbox" name="status[]" value="' . $status_id . '"' . $checked_status . '>' . $status_styles . '&nbsp;' . $lang['TOR_STATUS_NAME'][$status_id] . '</label></p></td>';
 		}
 		$statuses .= '</tr>';
 	}
