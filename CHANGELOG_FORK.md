@@ -4,3 +4,4 @@
 
 - Release v1.0.0 🎉
 - Added announcer autofill url
+- Used get_bt_ratio() in announcer.php
