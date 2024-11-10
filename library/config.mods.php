@@ -10,3 +10,8 @@ $bb_cfg['show_board_start_date'] = true;
 
 // Поиск по статусу раздачи
 $bb_cfg['search_by_tor_status'] = true;
+
+// Обнуление рейтинга
+// Для $bb_cfg['ratio_to_null'] можете использовать своё значение
+$bb_cfg['ratio_null_enabled'] = true;
+$bb_cfg['ratio_to_null'] = $bb_cfg['bt_min_ratio_allow_dl_tor'];
