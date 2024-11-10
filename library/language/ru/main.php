@@ -2839,3 +2839,6 @@ $lang['BT_NULL_RATIO_ALERT'] = "Внимание!\n\nВы уверены что 
 $lang['BT_NULL_RATIO_AGAIN'] = 'Вы уже делали сброс рейтинга!';
 $lang['BT_NULL_RATIO_NOT_NEEDED'] = 'У вас хороший рейтинг. Сброс возможен только при рейтинге меньше чем %s';
 $lang['BT_NULL_RATIO_SUCCESS'] = 'Рейтинг успешно сброшен!';
+
+// Случайная раздача
+$lang['RANDOM_RELEASE'] = 'Случайная раздача';
