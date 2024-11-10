@@ -70,7 +70,7 @@ ajax.callback.view_post = function(data) {
 
 <div class="nav">
 	<p class="floatL"><a href="{U_INDEX}">{T_INDEX}</a></p>
-	<!-- IF MATCHES --><p class="floatR">{MATCHES} {SERACH_MAX}</p><!-- ENDIF -->
+	<p class="floatR"><a href="{U_TRACKER}?random_release=1">Случайная раздача</a><!-- IF MATCHES -->&nbsp;&middot;&nbsp;{MATCHES}&nbsp;{SERACH_MAX}<!-- ENDIF --></p>
 	<div class="clear"></div>
 </div>
 

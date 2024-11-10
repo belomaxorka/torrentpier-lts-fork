@@ -20,3 +20,4 @@
 - BBCode: Поддержка относительных ссылок v1.0.0 ([ссылка](https://torrentpier.com/resources/bbcode-podderzhka-otnositelnyx-ssylok.306/))
 - Улучшение индексации страниц v1.0.0 ([ссылка](https://torrentpier.com/resources/uluchshenie-indeksacii-stranic.304/))
 - Сброс рейтинга v1.0.2 ([ссылка](https://torrentpier.com/resources/sbros-rejtinga.298/))
+- Случайная раздача v1.0.3 ([ссылка](https://torrentpier.com/resources/sluchajnaja-razdacha.277/))
