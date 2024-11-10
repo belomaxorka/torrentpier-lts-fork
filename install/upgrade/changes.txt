@@ -122,3 +122,7 @@ ALTER TABLE `bb_bt_tracker_snap` CHANGE `speed_down` `speed_down` int(11) unsign
 DELETE FROM `bb_extensions` WHERE `extension` = 'tga';
 DELETE FROM `bb_extensions` WHERE `extension` = 'tif';
 DELETE FROM `bb_extensions` WHERE `extension` = 'tiff';
+
+// -------------------------- [Fork] --------------------------
+// v1.0.0
+UPDATE `bb_config` SET `config_value` = 'https://localhost/bt/announce.php' WHERE `config_name` = 'bt_announce_url';

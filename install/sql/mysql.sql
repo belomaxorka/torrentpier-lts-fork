@@ -460,7 +460,7 @@ INSERT INTO `bb_config` VALUES ('birthday_min_age', '10');
 INSERT INTO `bb_config` VALUES ('birthday_check_day', '7');
 INSERT INTO `bb_config` VALUES ('bt_add_auth_key', '1');
 INSERT INTO `bb_config` VALUES ('bt_allow_spmode_change', '1');
-INSERT INTO `bb_config` VALUES ('bt_announce_url', 'https://demo.torrentpier.com/bt/announce.php');
+INSERT INTO `bb_config` VALUES ('bt_announce_url', 'https://localhost/bt/announce.php');
 INSERT INTO `bb_config` VALUES ('bt_disable_dht', '0');
 INSERT INTO `bb_config` VALUES ('bt_check_announce_url', '0');
 INSERT INTO `bb_config` VALUES ('bt_del_addit_ann_urls', '1');

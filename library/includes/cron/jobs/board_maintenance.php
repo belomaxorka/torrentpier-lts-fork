@@ -47,3 +47,9 @@ if ($posts_days = intval($bb_cfg['posts_cache_days_keep']))
 {
 	DB()->query("DELETE FROM ". BB_POSTS_HTML ." WHERE post_html_time < DATE_SUB(NOW(), INTERVAL $posts_days DAY)");
 }
+
+// Autofill announcer url
+if (empty($bb_cfg['bt_announce_url']) || ($bb_cfg['bt_announce_url'] === 'https://localhost/bt/announce.php'))
+{
+	bb_update_config(['bt_announce_url' => FULL_URL . 'bt/announce.php']);
+}
