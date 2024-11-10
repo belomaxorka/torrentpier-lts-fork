@@ -461,4 +461,10 @@ class ajax_common
 	{
 		require(AJAX_DIR .'sitemap.php');
 	}
+
+	// Количество релизов в профиль
+	function releases_profile()
+	{
+		require(AJAX_DIR .'releases_profile.php');
+	}
 }
