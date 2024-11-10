@@ -2827,3 +2827,6 @@ $lang['BOX_TAG'] = 'Рамка вокруг текста: [box]текст[/box]'
 $lang['INDENT_TAG'] = 'Добавить отступ: [indent]текст[/indent]';
 $lang['PRE_TAG'] = 'Форматированный текст: [pre]текст[/pre]';
 $lang['NFO_TAG'] = 'NFO: [nfo]текст[/nfo]';
+
+// Поиск по статусу раздачи
+$lang['TORRENT_STATUS'] = 'Поиск по статусу релиза';
