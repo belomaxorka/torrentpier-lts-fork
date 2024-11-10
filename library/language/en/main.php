@@ -2831,3 +2831,11 @@ $lang['NFO_TAG'] = 'NFO: [nfo]text[/nfo]';
 
 // Поиск по статусу раздачи
 $lang['TORRENT_STATUS'] = 'Search by status of release';
+
+// Обнуление рейтинга
+$lang['BT_NULL_RATIO'] = 'Reset rating';
+$lang['BT_NULL_RATIO_NONE'] = 'You don\'t have a rating';
+$lang['BT_NULL_RATIO_ALERT'] = "Attention!\n\nAre you sure you want to reset your rating?";
+$lang['BT_NULL_RATIO_AGAIN'] = 'You have already reset your rating!';
+$lang['BT_NULL_RATIO_NOT_NEEDED'] = 'You have a good rating. Reset is possible only with a rating less than %s';
+$lang['BT_NULL_RATIO_SUCCESS'] = 'The rating has been reset successfully!';

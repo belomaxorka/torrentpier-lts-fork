@@ -82,6 +82,11 @@ else if ($signature)
 	$signature = bbcode2html($signature);
 }
 
+// Обнуление рейтинга
+if ($bb_cfg['ratio_null_enabled'] && $btu = get_bt_userdata($profiledata['user_id'])) {
+	$template->assign_vars(array('NULLED_RATIO' => $btu['ratio_nulled']));
+}
+
 $this_date = bb_date(TIMENOW, 'md', false);
 $poster_birthday = ($profiledata['user_id'] != GUEST_UID && !empty($profiledata['user_birthday']) && $profiledata['user_birthday'] != '1900-01-01') ? bb_date(strtotime($profiledata['user_birthday']), 'md', false) : '';
 
