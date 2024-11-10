@@ -2842,3 +2842,6 @@ $lang['BT_NULL_RATIO_SUCCESS'] = 'The rating has been reset successfully!';
 
 // Случайная раздача
 $lang['RANDOM_RELEASE'] = 'Random release';
+
+// MonsterID аватар
+$lang['SET_MONSTERID_AVATAR'] = 'Set MonsterID avatar';

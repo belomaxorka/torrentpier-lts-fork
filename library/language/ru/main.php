@@ -2842,3 +2842,6 @@ $lang['BT_NULL_RATIO_SUCCESS'] = 'Рейтинг успешно сброшен!'
 
 // Случайная раздача
 $lang['RANDOM_RELEASE'] = 'Случайная раздача';
+
+// MonsterID аватар
+$lang['SET_MONSTERID_AVATAR'] = 'Установить MonsterID аватар';
