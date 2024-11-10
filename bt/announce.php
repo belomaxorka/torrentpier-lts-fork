@@ -287,7 +287,11 @@ else
 	// Ratio limits
 	if ((TR_RATING_LIMITS || $tr_cfg['limit_concurrent_ips']) && !$stopped)
 	{
-		$user_ratio = ($row['u_down_total'] && $row['u_down_total'] > MIN_DL_FOR_RATIO) ? ($row['u_up_total'] + $row['u_up_release'] + $row['u_up_bonus']) / $row['u_down_total'] : 1;
+		$user_ratio = get_bt_ratio($row);
+		if ($user_ratio === null)
+		{
+			$user_ratio = 1;
+		}
 		$rating_msg = '';
 
 		if (!$seeder)

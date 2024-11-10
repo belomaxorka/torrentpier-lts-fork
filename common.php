@@ -364,6 +364,15 @@ function make_rand_str ($len = 10)
 	return substr(str_shuffle(str_repeat('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', (int)$len)), 0, $len);
 }
 
+function get_bt_ratio ($btu)
+{
+	return
+		(!empty($btu['u_down_total']) && $btu['u_down_total'] > MIN_DL_FOR_RATIO)
+		? round((($btu['u_up_total'] + $btu['u_up_release'] + $btu['u_up_bonus']) / $btu['u_down_total']), 2)
+		: null
+	;
+}
+
 // bencode: based on OpenTracker
 function bencode ($var)
 {
