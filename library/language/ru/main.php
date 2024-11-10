@@ -2821,3 +2821,9 @@ $lang['UPLOAD_ERRORS'] = array(
 $lang['CAPTCHA'] = 'Проверка, что вы не робот';
 $lang['CAPTCHA_WRONG'] = 'Вы не смогли подтвердить, что вы не робот';
 $lang['CAPTCHA_SETTINGS'] = '<h2>ReCaptcha настроена не полностью</h2><p>Если вы еще не сгенерировали ключи, вы можете это сделать на странице <a href="https://www.google.com/recaptcha/admin">https://www.google.com/recaptcha/admin</a>.<br />После того, как вы сгенерируете ключи, нужно прописать их в файл library/config.php.</p>';
+
+// Набор BBCode тегов с рутрекера by belomaxorka
+$lang['BOX_TAG'] = 'Рамка вокруг текста: [box]текст[/box]';
+$lang['INDENT_TAG'] = 'Добавить отступ: [indent]текст[/indent]';
+$lang['PRE_TAG'] = 'Форматированный текст: [pre]текст[/pre]';
+$lang['NFO_TAG'] = 'NFO: [nfo]текст[/nfo]';
