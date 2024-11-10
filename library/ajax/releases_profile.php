@@ -2,7 +2,7 @@
 
 if (!defined('IN_AJAX')) die(basename(__FILE__));
 
-global $lang;
+global $lang, $bb_cfg;
 
 if (!$user_id = intval($this->request['user_id']) or !$profiledata = get_userdata($user_id)) {
 	$this->ajax_die($lang['NO_USER_ID_SPECIFIED']);
@@ -11,6 +11,8 @@ if (!$user_id = intval($this->request['user_id']) or !$profiledata = get_userdat
 if (!$mode = (string)$this->request['mode']) {
 	$this->ajax_die('invalid mode (empty)');
 }
+
+$show_completed_count = ($bb_cfg['show_completed_count'] || $bb_cfg['ocelot']['enabled']);
 
 switch ($mode) {
 	case 'get_releases_profile':
@@ -31,13 +33,13 @@ switch ($mode) {
 			$total_releases = $row['COUNT(tor.poster_id)'];
 			$total_releases_size = $row['SUM(tor.size)'];
 			$total_releases_completed = $row['SUM(ad.download_count)'];
-			$total_releases_completed_full = $row['SUM(tor.complete_count)'];
+			$total_releases_completed_full = $show_completed_count ? $row['SUM(tor.complete_count)'] : $total_releases_completed;
 		}
 
 		$this->response['releases_profile_html'] = '[
 			' . $lang['RELEASES'] . ': <span class="seed bold">' . $total_releases . '</span> |
 			' . $lang['RELEASER_STAT_SIZE'] . ' <span class="seed bold">' . humn_size($total_releases_size) . '</span> |
-			' . $lang['DOWNLOADED'] . ': <span title="' . $lang['COMPLETED'] . ':&nbsp;' . declension((int)$total_releases_completed_full, 'times') . '" class="seed bold">' . declension((int)$total_releases_completed, 'times') . '</span> ]';
+			' . $lang['DOWNLOADED'] . ': <span title="' . ($show_completed_count ? $lang['COMPLETED'] : $lang['DOWNLOADED']) . ':&nbsp;' . declension((int)$total_releases_completed_full, 'times') . '" class="seed bold">' . declension((int)$total_releases_completed, 'times') . '</span> ]';
 		break;
 
 	default:
