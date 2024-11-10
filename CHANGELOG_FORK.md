@@ -6,5 +6,6 @@
 - Release v1.0.0 🎉
 - Added announcer autofill url
 - Used get_bt_ratio() in announcer.php
+- Used declensions for days in some cases
 ### Added modifications:
 - Дата запуска форума в статистике на главной v1.0.0 ([ссылка](https://torrentpier.com/resources/data-zapuska-foruma-v-statistike-na-glavnoj.276/))
