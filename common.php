@@ -8,7 +8,7 @@ define('TIMENOW',   time());
 
 // Check system requirements
 // PHP
-if (PHP_VERSION_ID < 50304) die('TorrentPier II requires PHP version 5.3.4+. Your PHP version ' . PHP_VERSION);
+if (PHP_VERSION_ID < 50400) die('TorrentPier II requires PHP version 5.4.0+. Your PHP version ' . PHP_VERSION);
 if (PHP_VERSION_ID >= 70000) die('TorrentPier II requires PHP version lower than PHP 7. Your PHP version ' . PHP_VERSION);
 // Magic quotes
 if (function_exists('get_magic_quotes_gpc') && @get_magic_quotes_gpc()) die('Set: magic_quotes_gpc = Off');
