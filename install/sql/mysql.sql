@@ -392,6 +392,7 @@ CREATE TABLE IF NOT EXISTS `bb_bt_users` (
   `up_release_yesterday` bigint(20) unsigned NOT NULL DEFAULT '0',
   `up_bonus_yesterday` bigint(20) unsigned NOT NULL DEFAULT '0',
   `points_yesterday` float(16,2) unsigned NOT NULL DEFAULT '0.00',
+  `ratio_nulled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `auth_key` (`auth_key`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
