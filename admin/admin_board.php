@@ -59,7 +59,6 @@ switch ($mode)
 			'MAGNET_LINKS_ENABLED'    => $new['magnet_links_enabled'],
 			'GENDER'                  => $new['gender'],
 			'CALLSEED'                => $new['callseed'],
-			'INVITE_ENABLED'          => $new['new_user_reg_only_by_invite'],
 			'TOR_STATS'               => $new['tor_stats'],
 			'SHOW_LATEST_NEWS'        => $new['show_latest_news'],
 			'MAX_NEWS_TITLE'          => $new['max_news_title'],

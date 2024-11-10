@@ -297,10 +297,6 @@ define('BB_TOPICS_WATCH',         'bb_topics_watch');
 define('BB_USER_GROUP',           'bb_user_group');
 define('BB_USERS',                'bb_users');
 define('BB_WORDS',                'bb_words');
-// Mod invitation
-define('BB_INVITES',              'bb_invites');
-define('BB_INVITE_RULES',         'bb_invite_rules');
-// END Mod invitation
 
 define('TORRENT_EXT', 'torrent');
 

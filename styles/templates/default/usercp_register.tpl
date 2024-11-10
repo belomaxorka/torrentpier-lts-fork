@@ -90,15 +90,6 @@ document.write('<input type="hidden" name="user_timezone" value="'+tz+'" />');
 		<span id="check_pass"></span>
 	</td>
 </tr>
-<!-- IF $bb_cfg['new_user_reg_only_by_invite'] -->
-<!-- IF EDIT_PROFILE -->
-<!-- ELSE -->
-<tr>
-	<td class="prof-title">{L_INVITE_FNAME}<br /><small>{L_INVITE_FDESC}</small></td>
-	<td><input type="text" name="invite_code" size="35" value="{INVITE_CODE}" /></td>
-</tr>
-<!-- ENDIF -->
-<!-- ENDIF -->
 <!-- IF CAPTCHA_HTML -->
 <tr>
 	<td class="prof-title">{L_CAPTCHA}: *</td>
