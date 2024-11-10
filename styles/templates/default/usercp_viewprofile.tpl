@@ -135,6 +135,22 @@ ajax.callback.group_membership = function(data) {
 </script>
 <!-- ENDIF / IS_AM -->
 
+<!-- IF LOGGED_IN -->
+<script type="text/javascript">
+	ajax.releases_profile = function (mode) {
+		$('#releases_profile').html('<i class="loading-1">{L_LOADING}</i>');
+		ajax.exec({
+			action: 'releases_profile',
+			mode: mode,
+			user_id: {PROFILE_USER_ID}
+		});
+	}
+	ajax.callback.releases_profile = function (data) {
+		$('#releases_profile').html(data.releases_profile_html);
+	}
+</script>
+<!-- ENDIF -->
+
 <!-- IF TRAF_STATS || $bb_cfg['ratio_null_enabled'] -->
 <script type="text/javascript">
 ajax.index_data = function(mode) {
@@ -457,6 +473,10 @@ ajax.callback.gen_passkey = function(data){
 				<td><b>{AGE}</b></td>
 			</tr>
 			<!-- ENDIF -->
+			<tr>
+				<th>{L_RELEASER_STAT}</th>
+				<td id="releases_profile">[ <a href="#" class="med" onclick="ajax.releases_profile('get_releases_profile'); return false;">{L_RELEASER_STAT_SHOW}</a> ]</td>
+			</tr>
 			<tr>
 				<td colspan="2" class="pad_4">
 					<table id="traf-stats-tbl" <!-- IF TRAF_STATS -->style="display: none;"<!-- ENDIF --> class="bCenter borderless" cellspacing="1">
