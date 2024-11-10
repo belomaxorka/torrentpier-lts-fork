@@ -19,6 +19,7 @@ $bb_cfg['tp_version'] = '2.1.5-2024.10-HotFix [Final v9]';
 $bb_cfg['tp_release_date'] = '09-11-2024';
 $bb_cfg['tp_release_state'] = 'LTS';
 $bb_cfg['tp_zf_version'] = '2.4.13 (Latest)';
+$bb_cfg['tp_mod_version'] = 'v1.0.0';
 
 // Database
 $charset  = 'utf8'; // кодировка базы данных
