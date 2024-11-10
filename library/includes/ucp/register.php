@@ -426,6 +426,25 @@ foreach ($profile_fields as $field => $can_edit)
 		case 'avatar_ext_id':
 			if ($submit && !bf($pr_data['user_opt'], 'user_opt', 'dis_avatar'))
 			{
+				// MonsterID аватар
+				if (empty($_FILES['avatar']['name']) && !isset($_POST['delete_avatar']) && isset($_POST['use_monster_avatar'])) {
+					require_once(CLASS_DIR . 'monsterid/monsterid.php');
+					$tempAvatar = tmpfile();
+					$monsterAvatar = build_monster($pr_data['user_email'], $bb_cfg['avatars']['max_height'], $tempAvatar);
+					$tempAvatarPath = stream_get_meta_data($tempAvatar)['uri'];
+
+					// Manual filling $_FILES['avatar']
+					$_FILES['avatar'] = array();
+					if (is_file($tempAvatarPath)) {
+						$_FILES['avatar'] = array(
+							'name' => "MonsterID_{$pr_data['user_id']}.png",
+							'type' => mime_content_type($tempAvatarPath),
+							'tmp_name' => $tempAvatarPath,
+							'error' => UPLOAD_ERR_OK,
+							'size' => filesize($tempAvatarPath)
+						);
+					}
+				}
 				if (isset($_POST['delete_avatar']))
 				{
 					delete_avatar($pr_data['user_id'], $pr_data['avatar_ext_id']);
@@ -437,7 +456,7 @@ foreach ($profile_fields as $field => $can_edit)
 					require(INC_DIR .'functions_upload.php');
 					$upload = new upload_common();
 
-					if ($upload->init($bb_cfg['avatars'], $_FILES['avatar']) AND $upload->store('avatar', $pr_data))
+					if ($upload->init($bb_cfg['avatars'], $_FILES['avatar'], !isset($_POST['use_monster_avatar'])) and $upload->store('avatar', $pr_data))
 					{
 						$pr_data['avatar_ext_id'] = $upload->file_ext_id;
 						$db_data['avatar_ext_id'] = (int) $upload->file_ext_id;
