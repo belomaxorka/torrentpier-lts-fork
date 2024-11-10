@@ -2845,3 +2845,8 @@ $lang['RANDOM_RELEASE'] = 'Случайная раздача';
 
 // MonsterID аватар
 $lang['SET_MONSTERID_AVATAR'] = 'Установить MonsterID аватар';
+
+// Количество релизов в профиль
+$lang['RELEASER_STAT_SIZE'] = 'Объемом:';
+$lang['RELEASER_STAT'] = 'Статистика релизера:';
+$lang['RELEASER_STAT_SHOW'] = 'Показать статистику';
