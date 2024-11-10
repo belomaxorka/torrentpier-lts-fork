@@ -67,7 +67,7 @@ $select_sort_order .= '</select>';
 
 // Сортировка по ролям в списке пользователей
 $role_select = array(
-	'all' => $lang['ALL'],
+	'all' => mb_strtoupper($lang['ALL'], 'UTF-8'),
 	'user' => $lang['USERS'],
 	'admin' => $lang['ADMINISTRATORS'],
 	'moderator' => $lang['MODERATORS']
