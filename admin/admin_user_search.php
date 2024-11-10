@@ -91,7 +91,7 @@ if (!isset($_REQUEST['dosearch']))
 
 	foreach ($lastvisited as $days)
 	{
-		$lastvisited_list .= '<option value="'.$days.'">'.$days.' '. ( ( $days > 1 ) ? $lang['DAYS'] : $lang['DAY'] ) .'</option>';
+		$lastvisited_list .= '<option value="'.$days.'">'. delta_time((TIMENOW - 86400 * $days), TIMENOW, 'days') .'</option>';
 	}
 
 	$template->assign_vars(array(
@@ -726,7 +726,7 @@ else
 			switch($lastvisited_type)
 			{
 				case 'in':
-					$text = sprintf($lang['SEARCH_FOR_LASTVISITED_INTHELAST'], $lastvisited_days, ( ( $lastvisited_days > 1 ) ? $lang['DAYS'] : $lang['DAY'] ) );
+					$text = sprintf($lang['SEARCH_FOR_LASTVISITED_INTHELAST'], delta_time((TIMENOW - 86400 * $lastvisited_days), TIMENOW, 'days'));
 
 					$total_sql .= "SELECT COUNT(user_id) AS total
 									FROM ".BB_USERS."
@@ -737,7 +737,7 @@ else
 											AND u.user_id <> ".GUEST_UID;
 					break;
 				case 'after':
-					$text = sprintf($lang['SEARCH_FOR_LASTVISITED_AFTERTHELAST'], $lastvisited_days, ( ( $lastvisited_days > 1 ) ? $lang['DAYS'] : $lang['DAY'] ));
+					$text = sprintf($lang['SEARCH_FOR_LASTVISITED_AFTERTHELAST'], delta_time((TIMENOW - 86400 * $lastvisited_days), TIMENOW, 'days'));
 
 					$total_sql .= "SELECT COUNT(user_id) AS total
 									FROM ".BB_USERS."
