@@ -135,7 +135,7 @@ ajax.callback.group_membership = function(data) {
 </script>
 <!-- ENDIF / IS_AM -->
 
-<!-- IF TRAF_STATS -->
+<!-- IF TRAF_STATS || $bb_cfg['ratio_null_enabled'] -->
 <script type="text/javascript">
 ajax.index_data = function(mode) {
 	ajax.exec({
@@ -144,12 +144,14 @@ ajax.index_data = function(mode) {
 		user_id : {PROFILE_USER_ID}
 	});
 };
-ajax.callback.index_data = function(data) {
-	$('#traf-stats-tbl').html(data.html);
-	$('#bt_user_ratio').html(data.user_ratio);
-	$('#traf-stats-span').hide();
-	$('#traf-stats-tbl').show();
-	$('#bt_user_ratio').show();
+ajax.callback.index_data = function (data) {
+	if (data.mode == 'get_traf_stats') {
+		$('#traf-stats-tbl').html(data.html);
+		$('#bt_user_ratio').html(data.user_ratio);
+		$('#traf-stats-span').hide();
+		$('#traf-stats-tbl').show();
+		$('#bt_user_ratio').show();
+	}
 };
 </script>
 <!-- ENDIF -->
@@ -398,6 +400,13 @@ ajax.callback.gen_passkey = function(data){
 						<b id="passkey" class="med bold"><!-- IF AUTH_KEY -->{AUTH_KEY}<!-- ELSE -->{L_NOSELECT}<!-- ENDIF --></b>&nbsp;|
 						<a href="#" onclick="ajax.exec({ action: 'gen_passkey', user_id  : {PROFILE_USER_ID} }); return false;">{L_BT_GEN_PASSKEY}</a>
 					</span> ]
+					<!-- ENDIF -->
+					<!-- IF PROFILE_USER || IS_ADMIN -->
+					<!-- IF $bb_cfg['ratio_null_enabled'] -->
+					<!-- IF not NULLED_RATIO or IS_ADMIN -->
+					[ <a class="med" href="#" onclick="ajax.index_data('null_ratio'); return false;">{L_BT_NULL_RATIO}</a> ]
+					<!-- ENDIF -->
+					<!-- ENDIF -->
 					<!-- ENDIF -->
 				</td>
 			</tr>
