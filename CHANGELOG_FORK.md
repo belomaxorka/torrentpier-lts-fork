@@ -22,3 +22,4 @@
 - Сброс рейтинга v1.0.2 ([ссылка](https://torrentpier.com/resources/sbros-rejtinga.298/))
 - Случайная раздача v1.0.3 ([ссылка](https://torrentpier.com/resources/sluchajnaja-razdacha.277/))
 - MonsterID аватар v1.0.1 ([ссылка](https://torrentpier.com/resources/monsterid-avatar.299/))
+- Количество релизов в профиль v1.2.5 ([ссылка](https://torrentpier.com/resources/kolichestvo-relizov-v-profil.292/))
