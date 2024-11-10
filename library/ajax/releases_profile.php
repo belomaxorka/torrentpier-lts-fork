@@ -17,7 +17,7 @@ switch ($mode) {
 		$total_releases_size = $total_releases = $total_releases_completed = $total_releases_completed_full = 0;
 
 		$sql = "
-			SELECT COUNT(tor.poster_id), SUM(tor.size), SUM(tor.complete_count), SUM(ad.download_count)
+			SELECT COUNT(tor.poster_id), SUM(tor.size), SUM(ad.download_count), SUM(tor.complete_count)
 			FROM            " . BB_BT_TORRENTS . " tor
 				LEFT JOIN    " . BB_USERS . " u ON(u.user_id = tor.poster_id)
 				LEFT JOIN    " . BB_ATTACHMENTS_DESC . " ad ON(ad.attach_id = tor.attach_id)
