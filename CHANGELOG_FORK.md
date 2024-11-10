@@ -19,3 +19,4 @@
 - Вывод описания форума на странице форума v1.1.0 ([ссылка](https://torrentpier.com/threads/vyvod-opisanija-foruma-na-stranice-foruma.42142/))
 - BBCode: Поддержка относительных ссылок v1.0.0 ([ссылка](https://torrentpier.com/resources/bbcode-podderzhka-otnositelnyx-ssylok.306/))
 - Улучшение индексации страниц v1.0.0 ([ссылка](https://torrentpier.com/resources/uluchshenie-indeksacii-stranic.304/))
+- Сброс рейтинга v1.0.2 ([ссылка](https://torrentpier.com/resources/sbros-rejtinga.298/))
