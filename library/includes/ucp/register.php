@@ -83,6 +83,7 @@ switch ($mode)
 			'username'         => true,
 			'user_password'    => true,
 			'user_email'       => true,
+			'invite_code'      => true, // Mod invitation
 			'user_timezone'    => true,
 			'user_lang'        => true,
 			'user_opt'         => true,
@@ -93,6 +94,7 @@ switch ($mode)
 			'username'         => '',
 			'user_password'    => '',
 			'user_email'       => '',
+			'invite_code'      => '', // Mod invitation
 			'user_timezone'    => $bb_cfg['board_timezone'],
 			'user_lang'        => $bb_cfg['default_lang'],
 			'user_opt'         => 0,
@@ -218,6 +220,26 @@ foreach ($profile_fields as $field => $can_edit)
 			}
 			$tp_data['CAN_EDIT_USERNAME'] = $can_edit;
 			$tp_data['USERNAME'] = $pr_data['username'];
+			break;
+
+		/**
+		 *  Инвайт (reg)
+		 */
+		case 'invite_code':
+			if ($bb_cfg['new_user_reg_only_by_invite']) {
+				$invite_code = !empty($_POST['invite_code']) ? trim($_POST['invite_code']) : $pr_data['invite_code'];
+				if ($submit) {
+					$err = validate_invite_code($invite_code);
+					if (!$errors and $err && $mode == 'register') {
+						$errors[] = $err;
+					}
+					if ($invite_code != $pr_data['invite_code'] || $mode == 'register') {
+						$pr_data['invite_code'] = $invite_code;
+					}
+				}
+				$tp_data['CAN_EDIT_INVITE_CODE'] = $can_edit;
+				$tp_data['INVITE_CODE'] = $pr_data['invite_code'];
+			}
 			break;
 
 		/**

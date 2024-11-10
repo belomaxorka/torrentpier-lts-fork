@@ -186,6 +186,13 @@
 	</td>
 </tr>
 <tr>
+	<td><h4>{L_INVITE_ENABLED}</h4></td>
+	<td>
+		<label><input type="radio" name="new_user_reg_only_by_invite" value="1" <!-- IF INVITE_ENABLED -->checked="checked"<!-- ENDIF --> />{L_ENABLED}</label>&nbsp;&nbsp;
+		<label><input type="radio" name="new_user_reg_only_by_invite" value="0" <!-- IF not INVITE_ENABLED -->checked="checked"<!-- ENDIF --> />{L_DISABLED}</label>
+	</td>
+</tr>
+<tr>
 	<td><h4>{L_TRACKER_STATS}</h4></td>
 	<td>
 		<label><input type="radio" name="tor_stats" value="1" <!-- IF TOR_STATS -->checked="checked"<!-- ENDIF --> />{L_ENABLED}</label>&nbsp;&nbsp;
